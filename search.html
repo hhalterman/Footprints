@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Footprints</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+  <script src="https://use.fontawesome.com/249b49c3b8.js"></script>
+</head>
+
+<body>
+
+  <!--NAVBAR -->
+  <nav class="navbar navbar-default navigation-clean headerContainer">
+    <section class="container">
+      <header class="navbar-header"><a id="logo" class="navbar-brand navbar-link" href="/">Footprints</a>
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span>
+          <span class="icon-bar"></span></button>
+      </header>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li role="presentation"><a href="/search.html">Search for Footprints</a></li>
+          <li role="presentation"><a href="/#">Leave Your Footprint</a></li>
+        </ul>
+      </div>
+    </section>
+  </nav>
+
+
+  <!--MAIN--->
+  <main id="searchContainer">
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-12 personalityQuiz">
+          <h2>Search for Footprints</h2>
+
+          <!--SEARCH-->
+          <div class="searchBox">
+            <div class="navbar col-md-12">
+              <form class=" text-center">
+                <div class="inner-addon right-addon">
+                  <i class="fa fa-search icon" aria-hidden="true"></i>
+                  <input id="input" type="text" class="form-control" />
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-12 personalityQuiz">
+          <h2>Recent Footprints</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="results">
+
+            <!--These cards will appear from user's search, just testing stylization-->
+            <div class="col-md-4 col-sm-6">
+              <div class="card footprintCard">
+                <img
+                  src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/20/15/havana-main.jpg?w968h681"
+                  alt="Havana, Cuba" class="card-img-top">
+                <div class="card-block" style="text-align:center">
+                  <h4 class="card-title" style="font-weight: bold;">Havana, Cuba</h4>
+                  <hr>
+                  <p> Havana, is one of the worlds most exciting cities to visit. It’s uniqueness inspires the
+                    imagination, and it’s rich and colourful history fascinates.</p>
+                  <a href="https://www.tours-havana.com/about/havana" class="btn btn-primary card-btn"
+                    target="_blank">Learn More</a>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!--FOOTER-->
+
+  <footer id="myFooter">
+    <main class="container myColsrow">
+      <div class="row">
+        <section class="col-sm-3 myCols">
+          <h5>Get started</h5>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Footprint Search</a></li>
+            <li><a href="#">Create Footprint</a></li>
+          </ul>
+        </section>
+        <section class="col-sm-3 myCols">
+          <h5>About us</h5>
+          <ul>
+            <li><a href="#">Company Information</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">GitHub Repo</a></li>
+          </ul>
+        </section>
+        <section class="col-sm-3 myCols">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help desk</a></li>
+            <li><a href="#">Forums</a></li>
+          </ul>
+        </section>
+        <section class="col-sm-3 myCols">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <div class="social-networks">
+      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+      <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+      <a href="#" class="google"><i class="fa fa-instagram"></i></a>
+    </div>
+    <div class="footer-copyright">
+      <p>© 2019 Copyright CWRU Coding Bootcamp Group H </p>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+    $("#search-btn").on("click", function () {
+      let searchedFP = $("fp-search").val().trim();
+
+      searchedFP = searchedFP.replace(/\s+/g, "").toLowerCase();
+
+      $.get("/api/destinations/" + searchedCity, function (data) {
+        console.log(data);
+        if (data) {
+          $("#footprint").show();
+          $("#details").text(data.details);
+          $("#city").text(data.city);
+          $("#desc").text(data.desc);
+          $("#photo").text(data.photo);
+        }
+        else {
+          $("#city").text("No footprints here yet!");
+          $("#footprint").hide();
+        }
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

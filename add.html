@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Footprints</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+  <script src="https://use.fontawesome.com/249b49c3b8.js"></script>
+</head>
+
+<body>
+
+  <!--NAVBAR -->
+  <nav class="navbar navbar-default navigation-clean headerContainer">
+    <section class="container">
+      <header class="navbar-header"><a id="logo" class="navbar-brand navbar-link" href="/">Footprints</a>
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span>
+          <span class="icon-bar"></span></button>
+      </header>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li role="presentation"><a href="/search.html">Search for Footprints</a></li>
+          <li role="presentation"><a href="/#">Leave Your Footprint</a></li>
+        </ul>
+      </div>
+    </section>
+  </nav>
+
+  <!--ADD-->
+  <div id="addContainer">
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-12 personalityQuiz">
+          <h2>Leave Your Footprint</h2>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 personalityQuiz">
+
+          <div class="card-body">
+            <form method="POST" role="form">
+
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city">
+              </div>
+
+              <div class="form-group">
+                <label for="desc">Description</label>
+                <input type="text" class="form-control" id="desc">
+              </div>
+
+              <div class="form-group">
+                <label for="photo">Photo Link</label>
+                <input type="text" class="form-control" id="photo">
+              </div>
+
+            </form>
+            <br>
+            <div class="text-right">
+              <button id="submitBtn" type="submit" class="btn btn-default btn-lg quizSubmit">Leave Your
+                Footprint</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--FOOTER-->
+
+    <footer id="myFooter">
+      <main class="container myColsrow">
+        <div class="row">
+          <section class="col-sm-3 myCols">
+            <h5>Get started</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Footprint Search</a></li>
+              <li><a href="#">Create Footprint</a></li>
+            </ul>
+          </section>
+          <section class="col-sm-3 myCols">
+            <h5>About us</h5>
+            <ul>
+              <li><a href="#">Company Information</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">GitHub Repo</a></li>
+            </ul>
+          </section>
+          <section class="col-sm-3 myCols">
+            <h5>Support</h5>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help desk</a></li>
+              <li><a href="#">Forums</a></li>
+            </ul>
+          </section>
+          <section class="col-sm-3 myCols">
+            <h5>Legal</h5>
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </section>
+        </div>
+      </main>
+      <div class="social-networks">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+        <a href="#" class="google"><i class="fa fa-instagram"></i></a>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2019 Copyright CWRU Coding Bootcamp Group H </p>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+      $("#add-btn").on("click", function (event) {
+        event.preventDefault();
+        let newFootprint = {
+          Footprint: $("#footprint").val().trim(),
+          City: $("#city").val().trim(),
+          Description: $("#desc").val().trim(),
+          Photo: $("#photo").val().trim()
+        };
+
+        $.post("/api/destinations", newFootprint)
+          .then(function (data) {
+            console.log("add.html", data);
+            alert("Adding footprint...");
+          });
+      });
+    </script>
+
+
+</body>
+
+</html>
