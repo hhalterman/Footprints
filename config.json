@@ -1,14 +1,14 @@
 {
     "development": {
       "username": "root",
-      "password": "quickstar189",
+      "password": "PASSWORD",
       "database": "footprint",
       "host": "localhost",
       "dialect": "mysql"
     },
     "test": {
       "username": "root",
-      "password": "quickstar189",
+      "password": "PASSWORD",
       "database": "footprint",
       "host": "localhost",
       "dialect": "mysql",
