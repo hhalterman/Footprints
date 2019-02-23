@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/animate.css">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 
@@ -26,15 +26,15 @@
   <!--NAVBAR -->
   <nav class="navbar navbar-default navigation-clean headerContainer">
     <section class="container">
-      <header class="navbar-header"><a id="logo" class="navbar-brand navbar-link" href="/">Footprints</a>
+      <header class="navbar-header"><a id="logo" class="navbar-brand navbar-link" href="index.html">Footprints</a>
         <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
             class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span>
           <span class="icon-bar"></span></button>
       </header>
       <div class="collapse navbar-collapse" id="navcol-1">
         <ul class="nav navbar-nav navbar-right">
-          <li role="presentation"><a href="/search.html">Search for Footprints</a></li>
-          <li role="presentation"><a href="/#">Leave Your Footprint</a></li>
+          <li role="presentation"><a href="search.html">Discover Footprints</a></li>
+          <li role="presentation"><a href="add.html">Leave Your Footprint</a></li>
         </ul>
       </div>
     </section>
@@ -44,14 +44,14 @@
   <main class="jumbotron hero animated slideInRight">
     <section class="container">
       <div class="row">
-        <div id="heroText" class="col-md-2 col-md-offset-3 get-it animated slideInRight">
+        <div id="heroText" class="col-md-6 get-it animated slideInRight">
           <h2>Start searching for your next adventure</h2>
         </div>
       </div>
     </section>
 
     <section class="col-md-12 get-it animated slideInRight">
-      <a href="/#" class="btn btn-default btn-lg quiz" role="button">Take the Quiz!</a>
+      <a href="survey.html" class="btn btn-default btn-lg quizBTN" role="button">Take the Quiz!</a>
     </section>
   </main>
 
@@ -81,7 +81,6 @@
   </main>
 
   <section id="howItWorks" class="features-clean animated slideInRight">
-    <div class="col-md-6"></div>
     <div class="col-md-6 textBox">
       <p>
         "If you love to travel, this is the best site to find your next adventure. It was so simple to answer a few
@@ -144,32 +143,34 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script>
-    $(function() {
+    $(function () {
       var jumbotron = $(".hero");
-      var backgrounds = new Array( 
+      var backgrounds = new Array(
         "url('assets/img/nepal.jpg')",
-        "url('assets/img/stockholm.jpg')",
+        "url('assets/img/amsterdam.jpg')",
+        "url('assets/img/costarica.jpg')",
         "url('assets/img/london.jpg')",
-        "url('assets/img/costarica.jpg')", 
+        "url('assets/img/tokyo.jpg')",
         "url('assets/img/zurich.jpg')",
 
       );
       var current = 0;
 
-    function nextBackground() {
-      jumbotron.css("background", backgrounds[current = ++current % backgrounds.length] );
-      jumbotron.css("background", "cover");
-      jumbotron.css("z-index", "-100");
-      jumbotron.css("background-attachment", "fixed");
-      jumbotron.css("height", "370px");
-      jumbotron.css("animation-name", "slideInRight");
+      function nextBackground() {
+        jumbotron.css("background", backgrounds[current = ++current % backgrounds.length]);
+        jumbotron.css("background-attachment", "fixed");
+        jumbotron.css("background", "cover");
+        jumbotron.css("z-index", "-100");
+        jumbotron.css("height", "370px");
+        jumbotron.css("animation-name", "slideInRight");
+
+        setTimeout(nextBackground, 10000);
+      }
 
       setTimeout(nextBackground, 10000);
-    }
-
-    setTimeout(nextBackground, 10000);
       jumbotron.css("background", backgrounds[0]);
     });
+
   </script>
 
 

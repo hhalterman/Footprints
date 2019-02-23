@@ -116,16 +116,12 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-}
 
-@media (max-width:767px) {
   .navigation-clean-button .navbar-header {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-}
 
-@media (max-width:767px) {
   .navigation-clean-button .navbar-right {
     margin-bottom: 20px;
   }
@@ -208,9 +204,7 @@
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-}
 
-@media (max-width:767px) {
   .navigation-clean-button .navbar-nav .open .dropdown-menu>li>a {
     color: #37434d;
     padding-top: 12px;
@@ -315,9 +309,9 @@
 /* Header */
 
 .hero {
-  /* background: no-repeat center;
+  background: no-repeat center;
   background-size: cover;
-  z-index: -100; */
+  z-index: -100;
   background-attachment: fixed;
   height: 370px;
   animation-duration: 1s;
@@ -335,27 +329,23 @@
   }
 }
 
+.slideInRight {
+  animation-name: slideInRight;
+}
+
 #heroText {
   position: inherit;
-  width: 600px;
+  margin: auto;
+  float: none;
   animation-duration: 1s;
   -webkit-animation-iteration: 2s;
   text-shadow: 1px 1px 10px rgb(129, 129, 129), 1px 1px 10px rgb(172, 172, 172);
 }
 
-@media (min-width:992px) {
+@media (min-width:320px) {
   .hero .get-it {
     text-align: center;
     margin-top: 30px;
-  }
-  .hero .get-it h2 {
-    font-size: 2.5em;
-  }
-}
-
-@media (max-width:992px) {
-  .hero .get-it {
-    text-align: center;
   }
 }
 
@@ -363,12 +353,8 @@
   margin-bottom: 10px;
   font-weight: 600;
   text-align: center;
-  font-size: 3em;
+  font-size: 45px;
   color: #fff;
-}
-
-.hero .get-it .btn {
-  text-shadow: none;
 }
 
 /* Feature Section */
@@ -380,15 +366,27 @@
 
 .textBox {
   font-size: 20px;
-  width: 500px;
   font-weight: 200;
   margin-top: 50px;
   padding: 10px;
+  margin-right: 80px;
   float: right;
   border: 5px solid rgba(255, 255, 255, 0.408);
   background-color: rgba(255, 255, 255, .5);
-  margin-right: 80px;
 }
+
+@media (max-width:991px) {
+  .textBox {
+    margin: 20px;
+  }
+}
+
+@media (max-width:330px) {
+  .textBox p {
+    font-size: 18px
+  }
+}
+
 
 .textBox p {
   color: black
@@ -425,21 +423,15 @@
     padding-top: 25px;
     font-size: 24px;
   }
-}
 
-@media (max-width:767px) {
   .features-clean .intro {
     margin-bottom: 40px;
   }
-}
 
-@media (max-width:767px) {
   .features-clean .item {
     min-height: 0;
   }
-}
 
-@media (max-width:767px) {
   .features-clean {
     padding-bottom: 10px;
   }
