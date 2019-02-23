@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "test.js",
-  
-  "scripts": { 
-    "test": "echo \"Error: no test specified.\"" 
-   },
-
+  "scripts": {
+    "test": "echo \"Error: no test specified.\""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Annikizzle/Footprints.git"
@@ -22,5 +20,11 @@
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.1",
+    "mysql": "^2.16.0",
+    "sequelize": "^4.42.0"
   }
 }
