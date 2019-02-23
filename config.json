@@ -1,14 +1,22 @@
 {
     "development": {
       "username": "root",
+
+      "password": null,
+=======
       "password": "PASSWORD",
+
       "database": "footprint",
       "host": "localhost",
       "dialect": "mysql"
     },
     "test": {
       "username": "root",
+
+      "password": null,
+=======
       "password": "PASSWORD",
+
       "database": "footprint",
       "host": "localhost",
       "dialect": "mysql",
