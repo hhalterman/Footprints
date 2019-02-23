@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 
@@ -40,7 +41,7 @@
   </nav>
 
   <!--Main-->
-  <main class="jumbotron hero">
+  <main class="jumbotron hero animated slideInRight">
     <section class="container">
       <div class="row">
         <div id="heroText" class="col-md-2 col-md-offset-3 get-it animated slideInRight">
@@ -141,6 +142,35 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    $(function() {
+      var jumbotron = $(".hero");
+      var backgrounds = new Array( 
+        "url('assets/img/nepal.jpg')",
+        "url('assets/img/stockholm.jpg')",
+        "url('assets/img/london.jpg')",
+        "url('assets/img/costarica.jpg')", 
+        "url('assets/img/zurich.jpg')",
+
+      );
+      var current = 0;
+
+    function nextBackground() {
+      jumbotron.css("background", backgrounds[current = ++current % backgrounds.length] );
+      jumbotron.css("background", "cover");
+      jumbotron.css("z-index", "-100");
+      jumbotron.css("background-attachment", "fixed");
+      jumbotron.css("height", "370px");
+      jumbotron.css("animation-name", "slideInRight");
+
+      setTimeout(nextBackground, 10000);
+    }
+
+    setTimeout(nextBackground, 10000);
+      jumbotron.css("background", backgrounds[0]);
+    });
+  </script>
 
 
 </body>

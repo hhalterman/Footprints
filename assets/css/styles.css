@@ -315,11 +315,24 @@
 /* Header */
 
 .hero {
-  background: url(../../assets/img/homeimg.jpg) no-repeat center;
+  /* background: no-repeat center;
   background-size: cover;
-  z-index: -100;
+  z-index: -100; */
   background-attachment: fixed;
-  height: 400px;
+  height: 370px;
+  animation-duration: 1s;
+  -webkit-animation-iteration: 2s;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 #heroText {
