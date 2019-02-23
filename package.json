@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "test.js",
-  "scripts": {
-    "test": "mocha"
-  },
+  
+  "scripts": { "test": "echo \"Error: no test specified.\"" }
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Annikizzle/Footprints.git"
