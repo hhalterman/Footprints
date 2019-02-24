@@ -139,7 +139,7 @@
             <article class="form-group">
               <label for="questionSix">Your idea of a vacation is a relaxing, peaceful getaway with minimal
                 activity.</label>
-              <select class="form-control" id="questionSix">
+              <select class="form-control" id="questionSeven">
                 <option value="empty"></option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -150,7 +150,7 @@
             </article>
             <article class="form-group">
               <label for="questionSeven">You want to go to somewhere near a beach.</label>
-              <select class="form-control" id="questionSeven">
+              <select class="form-control" id="questionEight">
                 <option value="empty"></option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -162,7 +162,7 @@
             <article class="form-group">
               <label for="questionEight">You need modern conveniences (running water, electricity, air-conditioning,
                 etc.)</label>
-              <select class="form-control" id="questionEight">
+              <select class="form-control" id="questionTwelve">
                 <option value="empty"></option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -173,7 +173,7 @@
             </article>
             <article class="form-group">
               <label for="questionNine">You don't mind travelling on foot for long distances.</label>
-              <select class="form-control" id="questionNine">
+              <select class="form-control" id="questionThirteen">
                 <option value="empty"></option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -184,7 +184,7 @@
             </article>
             <article class="form-group">
               <label for="questionTen">How long are you wanting to vacation?</label>
-              <select class="form-control" id="questionTen">
+              <select class="form-control" id="questionFifteen">
                 <option value="empty"></option>
                 <option value="1">3-5 Days</option>
                 <option value="2">1 Week</option>
@@ -199,7 +199,7 @@
           </div>
 
           <!-- Modal after survey completion -->
-          <div id="bestMatch" class="modal fade" role="dialog">
+          <div id="surveyModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -281,76 +281,42 @@
 </html>
 
 <script type="text/javascript">
-    $('#submitBtn').on("click", event => {
-      console.log("button pushed");
-        event.preventDefault();
-        if($("#username").val() === "" || $("#firstName").val() === "" || $("#lastName").val() === "") {
-            alert("Please fill out all required forms.")
-        }
-        else {
-            var newUser = {
-            username: $("#username").val(),
-            firstName: $("#firstName").val(),
-            lastName: $("#lastName").val(),
-            nature: $("#questionOne").val(),
-            cost: $("#questionTwo").val(),
-            history: $("#questionThree").val(),
-            adventure: $("#questionFour").val(),
-            culture: $("#questionFive").val(),
-            urban: $("#questionSix").val(),
-            activity: $("#questionSeven").val(),
-            climate: $("#questionEight").val(),
-            access: $("#questionNine").val(),
-            stay: $("#questionTen").val(),
-            }
-            $.post("/api/survey", newUser).then(data => {
-                console.log(data);
-                $("#bestMatchCity").text(data.city);
-                $("#bestMatchCountry").text(data.country);
-                $("#bestMatchPhoto").attr("src", data.image);
-                $("#bestMatchDesc").text(data.description);
-                $("#bestMatch").modal("show");
-            });
-        }
-    })
-
-  // $("#submitBtn").on("click", function (event) {
-  //   event.preventDefault();
-  //   // Form validation
-  //   var valid = true;
-  //   if ($("#city").val() === "" || $("#photo").val() === "") {
-  //     valid = false;
-  //   } else if ($("#questionOne").val() === "empty" || $("#questionTwo").val() === "empty" || $("#questionThree").val() === "empty" || $("#questionFour").val() === "empty" || $("#question5").val() === "empty" || $("#questionSix").val() === "empty" || $("#questionSeven").val() === "empty" || $("#questionEight").val() === "empty" || $("#questionNine").val() === "empty" || $("#questionTen").val() === "empty") {
-  //     valid = false;
-  //   }
-  //   if (valid === true) {
-  //     var newUser = {
-  //       name: $("#city").val().trim(),
-  //       photo: $("#photo").val().trim(),
-  //       scores: [
-  //         $("#questionOne").val(),
-  //         $("#questionTwo").val(),
-  //         $("#questionThree").val(),
-  //         $("#questionFour").val(),
-  //         $("#questionFive").val(),
-  //         $("#questionSix").val(),
-  //         $("#questionSeven").val(),
-  //         $("#questionEight").val(),
-  //         $("#questionNine").val(),
-  //         $("#questionTen").val(),
-  //       ]
-  //     };
-  //     var currentURL = window.location.origin;
-  //     // Ajax call for receiving response after POST req
-  //     $.post(currentURL + "/api/destinations", newUser, function (data) {
-  //       $("#resultCity").text(data.name);
-  //       $("#resultCityImage").attr("src", data.photo);
-  //       $("#resultCityModal").modal("toggle");
-  //     });
-  //   } else {
-  //     // If a required field is missing, show alert
-  //     alert("Survey is incomplete!");
-  //   }
-  // });
-  
+  $("#submitBtn").on("click", function (event) {
+    event.preventDefault();
+    // Form validation
+    var valid = true;
+    if ($("#city").val() === "" || $("#photo").val() === "") {
+      valid = false;
+    } else if ($("#questionOne").val() === "empty" || $("#questionTwo").val() === "empty" || $("#questionThree").val() === "empty" || $("#questionFour").val() === "empty" || $("#question5").val() === "empty" || $("#questionSix").val() === "empty" || $("#questionSeven").val() === "empty" || $("#questionEight").val() === "empty" || $("#questionNine").val() === "empty" || $("#questionTen").val() === "empty") {
+      valid = false;
+    }
+    if (valid === true) {
+      var newUser = {
+        name: $("#city").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [
+          $("#questionOne").val(),
+          $("#questionTwo").val(),
+          $("#questionThree").val(),
+          $("#questionFour").val(),
+          $("#questionFive").val(),
+          $("#questionSix").val(),
+          $("#questionSeven").val(),
+          $("#questionEight").val(),
+          $("#questionNine").val(),
+          $("#questionTen").val(),
+        ]
+      };
+      var currentURL = window.location.origin;
+      // Ajax call for receiving response after POST req
+      $.post(currentURL + "/api/destinations", newUser, function (data) {
+        $("#resultCity").text(data.name);
+        $("#resultCityImage").attr("src", data.photo);
+        $("#resultCityModal").modal("toggle");
+      });
+    } else {
+      // If a required field is missing, show alert
+      alert("Survey is incomplete!");
+    }
+  });
 </script>
