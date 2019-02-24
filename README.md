@@ -12,7 +12,7 @@
   
  
  ## Description
-  - Footprints is a travel site based around a personality quiz. Simply answer the quiz questions and we will tell you where you should travel based on your answers. Our logic adds the scores you recieve for each question and pairs it with one of the destinations in our database. Users also have the ability to "leave their footprint" and add cities or locations they have been to. On the "Discover Footprints" page, users can search our database for a specific footprint or browse recent foorptints. Users also have the ability to update the descriptin or completely delete footprints.
+  - Footprints is a travel site based around a personality quiz. Simply answer the quiz questions and we will tell you where you should travel based on your answers. Our logic adds the scores you recieve for each question and pairs it with one of the destinations in our database. Users also have the ability to "leave their footprint" and add cities or locations they have been to. On the "Discover Footprints" page, users can search our database for a specific footprint or browse recent foorptints. Users also have the ability to update the description of footprint or delete comments associated with a footprint.
   
   
   ## Technologies Used
@@ -44,8 +44,4 @@
   - Adding user's Footprints to the possible quiz results
   - Allowing users to give data points for their footprint, allowing other users to then recieve that footprint after taking the quiz
   - Sharing your quiz result on social media
-<<<<<<< Updated upstream
   - Integrating the TripAdvisor API to suggest flights, hotels, etc. to users once they are matched with a footprint
-=======
-  - Integrating the TripAdvisor API to suggest flights, hotels, etc. to users once they are matched with a footprint
->>>>>>> Stashed changes
