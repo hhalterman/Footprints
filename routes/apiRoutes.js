@@ -65,18 +65,27 @@ app.post("/api/add", function(req, res) {
 
 
 
-app.get("/api/find", function(req, res) {
+app.get("/api/find/city/:city", function(req, res) {
   db.Locations.findAll({
     where: {
-      city: req.params.city,
-      country: req.params.country,
-      order: 'id DESC',
-      limit: 5,
+      city: req.params.city
     }
   }).then(function(dbLocations) {
     res.json(dbLocations);
   });
 });
+
+// app.get("/api/find/country:country", function(req, res) {
+//   db.Locations.findAll({
+//     where: {
+//       country: req.params.country,
+//     }
+//   }).then(function(dbLocations) {
+//     console.log(req.params.city);
+//     console.log(req.params.country);
+//     res.json(dbLocations);
+//   });
+// });
 
 }
 
