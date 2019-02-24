@@ -63,6 +63,43 @@ app.post("/api/add", function(req, res) {
     });
 });
 
+
+// Search for Footprint in location table by city.
+
+app.get("/api/find/city/:city", function(req, res) {
+  db.Locations.findAll({
+    where: {
+      city: req.params.city
+    }
+  }).then(function(dbLocations) {
+    res.json(dbLocations);
+  });
+});
+
+// Deleteing a comment.
+app.delete("/api/comment/:id", function(req, res) {
+  db.Input.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(function(dbInput) {
+      res.json(dbInput);
+    });
+});
+
+app.put("/api/comment", function(req, res) {
+  db.Input.update(req.body,
+    {
+      where: {
+        id: req.body.id
+      }
+    })
+    .then(function(dbInput) {
+      res.json(dbInput);
+    });
+});
+
 }
 
 
