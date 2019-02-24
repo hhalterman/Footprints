@@ -66,11 +66,22 @@ app.post("/api/add", function(req, res) {
 
 // Search for Footprint in location table by city.
 
-app.get("/api/find/city/:city", function(req, res) {
+app.get("/api/search/city/:city", function(req, res) {
   db.Locations.findAll({
     where: {
       city: req.params.city
     }
+  }).then(function(dbLocations) {
+    res.json(dbLocations);
+  });
+});
+
+// Generate 3 location cards for the search home page. 
+
+app.get("/api/search", function(req, res) {
+  db.Locations.findAll({
+    ORDER: id DESC,
+    limit: 3
   }).then(function(dbLocations) {
     res.json(dbLocations);
   });
