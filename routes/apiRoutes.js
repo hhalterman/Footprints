@@ -63,6 +63,21 @@ app.post("/api/add", function(req, res) {
     });
 });
 
+
+
+app.get("/api/find", function(req, res) {
+  db.Locations.findAll({
+    where: {
+      city: req.params.city,
+      country: req.params.country,
+      order: 'id DESC',
+      limit: 5,
+    }
+  }).then(function(dbLocations) {
+    res.json(dbLocations);
+  });
+});
+
 }
 
 
