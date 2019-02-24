@@ -24,9 +24,48 @@ module.exports = function(app) {
       stay: req.body.stay,
     })
       .then(function(dbUsers){
-     console.log(dbUsers);
-      res.json(dbUsers);
-      // compare(dbUser);
+        let bestMatch;
+        let smallestDifference;
+      
+      // Takes each location score and converts it into a number, then pushes it into one array. 
+        db.Locations.findAll({}).then(function() {
+        for (var i = 0; i < db.Locations.length; i++) {
+      
+      // Take the difference of each score and push it into it's own array.
+        const differences = [];
+        differences.push(Math.abs((users.nature) - (locations.nature)));
+        differences.push(Math.abs((users.cost) - (locations.cost)));
+        differences.push(Math.abs((users.history) - (locations.history)));
+        differences.push(Math.abs((users.adventure) - (locations.adventure)));
+        differences.push(Math.abs((users.urban) - (locations.urban)));
+        differences.push(Math.abs((users.activity) - (locations.activity)));
+        differences.push(Math.abs((users.culture) - (locations.cuture)));
+        differences.push(Math.abs((users.climate) - (locations.climate)));
+        differences.push(Math.abs((users.access) - (locations.access)));
+        differences.push(Math.abs((users.stay) - (locations.stay)));
+        console.log(differences);  
+      
+      // Get the sum of the differences array.
+        const result = differences.recude((acc, cur) => {
+          return acc + curr;
+          }, 0);
+      
+      // If no Best Match exists, set current location as the best match and the smallestDifference as the current number.
+          if(!bestMatch) {
+            bestMatch = location;
+            smallestDifference = result;
+          }
+      
+      // If a best match exists, compare the current result to the smallest difference, and replace if less.
+          else if(result < smallestDifference) {
+            bestMatch = location;
+            smallestDifference = results;
+          }
+      };
+      });
+      // Send the best match to the client. 
+      console.log(bestMatch);
+      res.json(bestMatch);
       });
     });
   
@@ -102,51 +141,50 @@ app.put("/api/comment", function(req, res) {
 
 }
 
-
-
 // function compare(users) {  
 
-//   // Empty variables to store results
-//     let bestMatch = [];
-//     let smallestDifference;
+  // Empty variables to store results
+  //   let bestMatch;
+  //   let smallestDifference;
   
-//   // Takes each location score and converts it into a number, then pushes it into one array. 
-//     db.Locations.findAll({}).then(function() {
-//     dblocations.forEach(locations => {
+  // // Takes each location score and converts it into a number, then pushes it into one array. 
+  //   db.Locations.findAll({}).then(function() {
+  //   for (var i = 0; i < db.Locations.length; i++) {
   
-//   // Take the difference of each score and push it into it's own array.
-//     const differences = [];
-//     differences.push(Math.abs((users.nature) - (locations.nature)));
-//     differences.push(Math.abs((users.cost) - (locations.cost)));
-//     differences.push(Math.abs((users.history) - (locations.history)));
-//     differences.push(Math.abs((users.adventure) - (locations.adventure)));
-//     differences.push(Math.abs((users.urban) - (locations.urban)));
-//     differences.push(Math.abs((users.activity) - (locations.activity)));
-//     differences.push(Math.abs((users.culture) - (locations.cuture)));
-//     differences.push(Math.abs((users.climate) - (locations.climate)));
-//     differences.push(Math.abs((users.access) - (locations.access)));
-//     differences.push(Math.abs((users.stay) - (locations.stay)));
-      
+  // // Take the difference of each score and push it into it's own array.
+  //   const differences = [];
+  //   differences.push(Math.abs((users.nature) - (locations.nature)));
+  //   differences.push(Math.abs((users.cost) - (locations.cost)));
+  //   differences.push(Math.abs((users.history) - (locations.history)));
+  //   differences.push(Math.abs((users.adventure) - (locations.adventure)));
+  //   differences.push(Math.abs((users.urban) - (locations.urban)));
+  //   differences.push(Math.abs((users.activity) - (locations.activity)));
+  //   differences.push(Math.abs((users.culture) - (locations.cuture)));
+  //   differences.push(Math.abs((users.climate) - (locations.climate)));
+  //   differences.push(Math.abs((users.access) - (locations.access)));
+  //   differences.push(Math.abs((users.stay) - (locations.stay)));
+  //   console.log(differences);  
   
-//   // Get the sum of the differences array.
-//     const result = differences.recude((acc, cur) => {
-//       return acc + curr;
-//       }, 0);
+  // // Get the sum of the differences array.
+  //   const result = differences.recude((acc, cur) => {
+  //     return acc + curr;
+  //     }, 0);
   
-//   // If no Best Match exists, set current location as the best match and the smallestDifference as the current number.
-//       if(!bestMatch) {
-//         bestMatch = location;
-//         smallestDifference = result;
-//       }
+  // // If no Best Match exists, set current location as the best match and the smallestDifference as the current number.
+  //     if(!bestMatch) {
+  //       bestMatch = location;
+  //       smallestDifference = result;
+  //     }
   
-//   // If a best match exists, compare the current result to the smallest difference, and replace if less.
-//       else if(result < smallestDifference) {
-//         bestMatch = location;
-//         smallestDifference = results;
-//       }
-//   });
-//   });
-//   // Send the best match to the client. 
-//   res.json(bestMatch);
+  // // If a best match exists, compare the current result to the smallest difference, and replace if less.
+  //     else if(result < smallestDifference) {
+  //       bestMatch = location;
+  //       smallestDifference = results;
+  //     }
+  // };
+  // });
+  // // Send the best match to the client. 
+  // console.log(bestMatch);
+  // res.json(bestMatch);
   
-//   };
+  // };

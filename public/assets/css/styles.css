@@ -482,19 +482,19 @@ nav.vertical-nav {
 }
 
 .personalityQuiz {
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .8);
   border: 5px solid rgba(255, 255, 255, 0.408);
   margin-top: 40px;
 }
 
 .aboutYou {
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .8);
   border: 5px solid rgba(255, 255, 255, 0.408);
   margin-top: 40px;
 }
 
 .quiz {
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .8);
   border: 5px solid rgba(255, 255, 255, 0.408);
   margin-bottom: 40px;
   margin-top: 40px;
