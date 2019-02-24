@@ -5,7 +5,7 @@
 
 
 ## Authors
-  - [Brett Bender] (https://github.com/benderb64z)(Research / Logics )
+  - [Brett Bender](https://github.com/benderb64z) (Research / Logics )
   - [Hailey Halterman](https://github.com/hhalter) (Front-end / Design)
   - [Annika Tranér](https://github.com/Annikizzle) (Front-end / Back-end / Travis)
   - [Joeseph Williamson](https://github.com/jmbw88) (Project Management / Back-end / Routing / Quiz Logic)
@@ -44,4 +44,8 @@
   - Adding user's Footprints to the possible quiz results
   - Allowing users to give data points for their footprint, allowing other users to then recieve that footprint after taking the quiz
   - Sharing your quiz result on social media
+<<<<<<< Updated upstream
   - Integrating the TripAdvisor API to suggest flights, hotels, etc. to users once they are matched with a footprint
+=======
+  - Integrating the TripAdvisor API to suggest flights, hotels, etc. to users once they are matched with a footprint
+>>>>>>> Stashed changes
