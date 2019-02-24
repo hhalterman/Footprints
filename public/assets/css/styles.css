@@ -605,9 +605,8 @@ body {
   -webkit-box-shadow: 1px 3px 8px rgb(58, 58, 58);
   box-shadow: 1px 3px 8px rgb(58, 58, 58);
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   background: #fff;
-  height: 450px;
 }
 
 .footprintCard p {
@@ -669,6 +668,15 @@ body {
 .card-btn:active {
   background: #3FB5C5;
   border-color: #3FB5C5;
+}
+
+.comment {
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding-bottom: 50px;
 }
 
 #results {
@@ -740,7 +748,6 @@ body {
   position: relative;
   background-size: cover;
   background-position: center center;
-  min-height: 1380px;
 }
 
 .headerContainer {
