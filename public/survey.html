@@ -207,8 +207,10 @@
                   <h3 class="modal-title">Your next vacation destination: </h3>
                 </div>
                 <div class="modal-body">
-                  <h2 id="resultCity"></h2>
-                  <img id="resultCityImage" src="#">
+                  <h2 id="bestMatchCity"></h2>
+                  <h2 id="bestMatchCountry"></h2>
+                  <img id="bestMatchPhoto" src="#">
+                  <p id="bestMatchDesc"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -304,8 +306,8 @@
                 console.log(data);
                 $("#bestMatchCity").text(data.city);
                 $("#bestMatchCountry").text(data.country);
-                $("#bestMatchPhoto").attr("src", data.image);
-                $("#bestMatchDesc").text(data.description);
+                $("#bestMatchPhoto").attr("src", data.img);
+                $("#bestMatchDesc").text(data.locDesc);
                 $("#bestMatch").modal("show");
             });
         }

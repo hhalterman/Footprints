@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL){
         port: 8030,
         host: "localhost",
         user: "root",
-        password: null,
+        password: "#Mew4ever",
         database: "footprints"
     });
 };
