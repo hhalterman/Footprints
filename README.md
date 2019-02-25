@@ -5,10 +5,10 @@
 
 
 ## Authors
-  - [Brett Bender](https://github.com/benderb64z) (Research / Logics )
-  - [Hailey Halterman](https://github.com/hhalter) (Front-end / Design)
+  - [Brett Bender](https://github.com/benderb64z) (Research)
+  - [Hailey Halterman](https://github.com/hhalterman) (Front-end / Design)
   - [Annika Tranér](https://github.com/Annikizzle) (Front-end / Back-end / Travis)
-  - [Joeseph Williamson](https://github.com/jmbw88) (Project Management / Back-end / Routing / Quiz Logic)
+  - [Joseph Williamson](https://github.com/jmbw88) (Project Management / Back-end / Routing / Quiz Logic)
   
  
  ## Description

@@ -282,6 +282,7 @@
 
 <script type="text/javascript">
     $('#submitBtn').on("click", event => {
+      $("#bestMatch").modal("show");
       console.log("button pushed");
         event.preventDefault();
         if($("#username").val() === "" || $("#firstName").val() === "" || $("#lastName").val() === "") {
@@ -309,7 +310,6 @@
                 $("#bestMatchCountry").text(data.country);
                 $("#bestMatchPhoto").attr("src", data.image);
                 $("#bestMatchDesc").text(data.description);
-                $("#bestMatch").modal("show");
             });
         }
     })
