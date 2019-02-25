@@ -28,7 +28,8 @@ module.exports = function(sequelize, DataTypes) {
     activity : DataTypes.INTEGER,
     climate : DataTypes.INTEGER,
     access : DataTypes.INTEGER,
-    stay : DataTypes.INTEGER
+    stay : DataTypes.INTEGER,
+    culture : DataTypes.INTEGER
   });
   return users;
 };
