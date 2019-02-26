@@ -485,6 +485,7 @@ nav.vertical-nav {
   background-color: rgba(255, 255, 255, .8);
   border: 5px solid rgba(255, 255, 255, 0.408);
   margin-top: 40px;
+
 }
 
 .aboutYou {
@@ -526,7 +527,7 @@ nav.vertical-nav {
   position: relative;
   background-size: cover;
   background-position: center center;
-  min-height: 670px;
+  min-height: 750px;
 }
 
 /* Search */
