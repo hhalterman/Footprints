@@ -59,6 +59,27 @@
             </div>
           </div>
 
+          <!-- Modal with search result -->
+          <div id="searchMatch" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3 class="modal-title">Your search:</h3>
+                </div>
+                <div class="modal-body">
+                  <h2 id="searchCity"></h2>
+                  <h2 id="searchCountry"></h2>
+                  <img id="searchPhoto" src="">
+                  <p id="searchDesc"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -81,18 +102,16 @@
             <div class="col-md-4 col-sm-6">
               <div class="card footprintCard">
                 <img id="bestMatchPhoto"
-                  src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/20/15/havana-main.jpg?w968h681"
-                  alt="" class="card-img-top">
+                  src="" class="card-img-top">
                 <div class="card-block" style="text-align:center">
-                  <h4 id="bestMatchCity" class="card-title" style="font-weight: bold;">Havana</h4>
-                  <h4 id="bestMatchCountry" class="card-title" style="font-weight: bold;">Cuba</h4>
+                  <h4 id="bestMatchCity" class="card-title" style="font-weight: bold;"></h4>
+                  <h4 id="bestMatchCountry" class="card-title" style="font-weight: bold;"></h4>
                   <hr>
-                  <p id="bestMatchDesc" class="footprintDescription">Havana, is one of the worlds most exciting cities to visit. It’s uniqueness inspires the
-                    imagination, and it’s rich and colourful history fascinates.</p>
+                  <p id="bestMatchDesc" class="footprintDescription"></p>
                   <a href="#" class="btn btn-primary card-btn commentBtn">Comment on this Footprint</a>
                   <hr>
                   <h4>Most Recent Comment</h4>
-                  <p class="comment">I visited Havana in college and loved the atmosphere! So much culture.</p>
+                  <p class="comment"></p>
                   <a href="#" class="btn btn-primary card-btn editCommentBtn">Edit this Comment</a>
 
                   <!-- Modal opens when comment button is clicked-->
@@ -159,7 +178,7 @@
           <h5>Get started</h5>
           <ul>
             <li><a href="survey.html">Take the Footprints Quiz</a></li>
-            <li><a href="search.html">DiscoverFootprints</a></li>
+            <li><a href="search.html">Discover Footprints</a></li>
             <li><a href="add.html">Create Footprint</a></li>
           </ul>
         </section>
@@ -210,22 +229,23 @@ $("#search-btn").on("click", function () {
       $.get("/api/search/" + searchedCity, function (data) {
         console.log(data);
         if (data) {
-          $("#footprint").show();
-          $("#city").text(data.city);
-          $("#country").text(data.country);
-          $("#desc").text(data.locDesc);
-          $("#photo").text(data.img);
+          $("#searchCity").text(data.city);
+          $("#searchCountry").text(data.country);
+          $("#searchDesc").text(data.locDesc);
+          $("#searchPhoto").text(data.img);
         }
         else {
-          $("#city").text("No footprints here yet!");
+          $("#seachCity").text("No footprints here yet!");
           $("#footprint").hide();
         }
       });
     });
   
 
-
     $(document).ready(function(){
+        $("#search-btn").click(function(){
+          $("#searchMatch").modal('show');
+        });
         $(".commentBtn").click(function(){
           $("#makeCommentModal").modal('show');
         });
