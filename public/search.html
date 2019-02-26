@@ -80,19 +80,20 @@
             <!--These cards will appear from user's search, just testing stylization-->
             <div class="col-md-4 col-sm-6">
               <div class="card footprintCard">
-                <img
+                <img id="bestMatchPhoto"
                   src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/20/15/havana-main.jpg?w968h681"
-                  alt="Havana, Cuba" class="card-img-top">
+                  alt="" class="card-img-top">
                 <div class="card-block" style="text-align:center">
-                  <h4 class="card-title" style="font-weight: bold;">Havana, Cuba</h4>
+                  <h4 id="bestMatchCity" class="card-title" style="font-weight: bold;">Havana</h4>
+                  <h4 id="bestMatchCountry" class="card-title" style="font-weight: bold;">Cuba</h4>
                   <hr>
-                  <p class="footprintDescription">Havana, is one of the worlds most exciting cities to visit. It’s uniqueness inspires the
+                  <p id="bestMatchDesc" class="footprintDescription">Havana, is one of the worlds most exciting cities to visit. It’s uniqueness inspires the
                     imagination, and it’s rich and colourful history fascinates.</p>
-                  <a href="#" class="btn btn-primary card-btn updateBtn">Update Footprint Description</a>
                   <a href="#" class="btn btn-primary card-btn commentBtn">Comment on this Footprint</a>
                   <hr>
                   <h4>Most Recent Comment</h4>
                   <p class="comment">I visited Havana in college and loved the atmosphere! So much culture.</p>
+                  <a href="#" class="btn btn-primary card-btn editCommentBtn">Edit this Comment</a>
 
                   <!-- Modal opens when comment button is clicked-->
                   <div id="makeCommentModal" class="modal fade" tabindex="-1" role="dialog">
@@ -100,15 +101,18 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h4 class="modal-title">Havana, Cuba</h4>
+                          <h4 class="modal-title" id="bestMatchCity"></h4>
+                          <h4 class="modal-title" id="bestMatchCountry"></h4>
                         </div>
                         <div class="modal-body">
-                          <input class="col-md-12"></input>
+                          <h4>Please enter your username</h4>
+                          <input class="col-md-12" id="username"></input>
+                          <h4 style="margin-top: 60px;">Comment</h4>
+                          <input class="col-md-12" id="comment"></input>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save</button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Delete comment</button>
+                          <button id="saveComment" type="button" class="btn btn-primary">Save</button>
                         </div>
                       </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
@@ -120,36 +124,16 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h4 class="modal-title">Havana, Cuba</h4>
+                          <h4 class="modal-title" id="bestMatchCity"></h4>
+                          <h4 class="modal-title" id="bestMatchCountry"></h4>
                         </div>
                         <div class="modal-body">
-                          <p class="col-md-12" contenteditable="true">Comment from MySql here</p>
+                          <p class="col-md-12" contenteditable="true"></p>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Delete comment</button>
-                        </div>
-                      </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                  </div><!-- /.modal -->
-
-                  <!-- Modal opens when you edit a footprint description-->
-                  <div id="updateFootprintModal" class="modal fade" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h4 class="modal-title">Havana, Cuba</h4>
-                        </div>
-                        <div class="modal-body">
-                          <p class="col-md-12" contenteditable="true">Havana, is one of the worlds most exciting cities to visit. It’s uniqueness inspires the
-                            imagination, and it’s rich and colourful history fascinates.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Delete comment</button>
+                          <button id="updateCommentBtn" type="button" class="btn btn-primary">Save changes</button>
+                          <button id="deleteCommentBtn" type="button" class="btn btn-danger" data-dismiss="modal">Delete comment</button>
                         </div>
                       </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
@@ -174,17 +158,17 @@
         <section class="col-sm-3 myCols">
           <h5>Get started</h5>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Footprint Search</a></li>
-            <li><a href="#">Create Footprint</a></li>
+            <li><a href="survey.html">Take the Footprints Quiz</a></li>
+            <li><a href="search.html">DiscoverFootprints</a></li>
+            <li><a href="add.html">Create Footprint</a></li>
           </ul>
         </section>
         <section class="col-sm-3 myCols">
           <h5>About us</h5>
           <ul>
-            <li><a href="#">Company Information</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">GitHub Repo</a></li>
+            <li><a href="index.html">Company Information</a></li>
+            <li><a href="https://github.com/Annikizzle/Footprints/issues">Contact us</a></li>
+            <li><a href="https://github.com/Annikizzle/Footprints">GitHub Repo</a></li>
           </ul>
         </section>
         <section class="col-sm-3 myCols">
@@ -245,7 +229,7 @@
         $(".commentBtn").click(function(){
           $("#makeCommentModal").modal('show');
         });
-        $(".comment").click(function(){
+        $(".editCommentBtn").click(function(){
           $("#editCommentModal").modal('show');
         });
         $(".updateBtn").click(function() {

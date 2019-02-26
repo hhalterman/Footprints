@@ -96,7 +96,7 @@ VALUES ("Dubrovnik", "Croatia", "https://i.imgur.com/hEI8tZd.jpg", "Dubrovnik ha
 4, 4, 5, 4, 5, 3, 3, 3, 2, 4, "2019-02-23 18:39:07", "2019-02-23 18:39:07");
 
 INSERT INTO locations (CITY, COUNTRY, img, locDesc, nature, cost, history, adventure, culture, urban, activity, climate, access, stay, createdAt, updatedAt)
-VALUES ("Havana", "Cuba", "https://i.imgur.com/1rfs7cK.jpg", "Havana, is one of the worlds most exciting cities to visit. It’s uniqueness inspires the imagination, and it’s rich and colourful history fascinates.", 
+VALUES ("Havana", "Cuba", "https://i.imgur.com/1rfs7cK.jpg", "Havana, is one of the worlds most exciting cities to visit. It’s uniqueness inspires the imagination, and it’s rich and colorful history fascinates.", 
 4, 2, 4, 5, 4, 4, 4, 5, 3, 2, "2019-02-23 18:39:07", "2019-02-23 18:39:07");
 
 
