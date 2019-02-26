@@ -41,7 +41,7 @@ VALUES ("Maui", "United States", "https://i.imgur.com/S5zts6c.jpg",  "The Hawaii
  5, 5, 4, 5, 5, 1, 5, 5, 3, 4, "2019-02-23 18:39:07", "2019-02-23 18:39:07");
 
 INSERT INTO locations (CITY, COUNTRY, img, locDesc, nature, cost, history, adventure, culture, urban, activity, climate, access, stay, createdAt, updatedAt)
-VALUES ("Santo-Domingo", "Dominican Rublic", "https://i.imgur.com/oYUsnYQ.jpg",  "The capital of the Dominican Republic is a mix of old world charm and modern Latin flair. Its medieval palaces and fortresses mix with nightlife and shopping to rival any modern city in the world. You'll find pristine beaches and hidden gems like a salsa/merengue club set inside a huge underground cave.", 
+VALUES ("Santo-Domingo", "Dominican Republic", "https://i.imgur.com/oYUsnYQ.jpg",  "The capital of the Dominican Republic is a mix of old world charm and modern Latin flair. Its medieval palaces and fortresses mix with nightlife and shopping to rival any modern city in the world. You'll find pristine beaches and hidden gems like a salsa/merengue club set inside a huge underground cave.", 
 3, 2, 2, 3, 4, 2, 4, 4, 4, 3, "2019-02-23 18:39:07", "2019-02-23 18:39:07");
 
 INSERT INTO locations (CITY, COUNTRY, img, locDesc, nature, cost, history, adventure, culture, urban, activity, climate, access, stay, createdAt, updatedAt)
@@ -79,13 +79,13 @@ VALUES ("Budapest", "Hungary", "https://i.imgur.com/QrlxDyY.jpg", "Over 15 milli
 
 
 INSERT INTO locations (CITY, COUNTRY, img, locDesc, nature, cost, history, adventure, culture, urban, activity, climate, access, stay, createdAt, updatedAt)
-VALUES ("Prague", "Czech Rebulic", "https://i.imgur.com/9eL14Jn.jpg", "The bohemian allure and fairytale features of Prague make it a perfect destination for beach-weary vacationers who want to immerse themselves in culture.
+VALUES ("Prague", "Czech Republic", "https://i.imgur.com/9eL14Jn.jpg", "The bohemian allure and fairytale features of Prague make it a perfect destination for beach-weary vacationers who want to immerse themselves in culture.
 ",
 2, 4, 3, 3, 3, 3, 4, 3, 4, 3, "2019-02-23 18:39:07", "2019-02-23 18:39:07");
 
 
 INSERT INTO locations (CITY, COUNTRY, img, locDesc, nature, cost, history, adventure, culture, urban, activity, climate, access, stay, createdAt, updatedAt)
-VALUES ("Katehmandu", "Nepal", "https://i.imgur.com/fYHp832.jpg", "Nepal’s capital is surrounded by a valley full of historic sites, ancient temples, shrines, and fascinating villages. Mingle with locals and animals amid Durbar Square’s monuments, or join mountain trekkers in the bustling Thamel District.
+VALUES ("Kathmandu", "Nepal", "https://i.imgur.com/fYHp832.jpg", "Nepal’s capital is surrounded by a valley full of historic sites, ancient temples, shrines, and fascinating villages. Mingle with locals and animals amid Durbar Square’s monuments, or join mountain trekkers in the bustling Thamel District.
 ",
 5, 1, 2, 5, 2, 1, 3, 5, 2, 3, "2019-02-23 18:39:07", "2019-02-23 18:39:07");
 
