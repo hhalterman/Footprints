@@ -107,10 +107,10 @@ app.post("/api/add", function(req, res) {
 
 // // Search for Footprint in location table by city.
 
-app.get("/api/search/city", function(req, res) {
-  db.Locations.findAll({
+app.get("/api/search/:searchedCity", function(req, res) {
+  db.Locations.findOne({
     where: {
-      city: req.body.city
+      city: req.params.searchedCity
     }
   }).then(function(dbLocations) {
     res.json(dbLocations);
