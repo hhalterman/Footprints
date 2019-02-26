@@ -9,10 +9,11 @@
   - [Hailey Halterman](https://github.com/hhalterman) (Front-end / Design)
   - [Annika Tranér](https://github.com/Annikizzle) (Front-end / Back-end / Travis)
   - [Joseph Williamson](https://github.com/jmbw88) (Project Management / Back-end / Routing / Quiz Logic)
+  - [Lily Tranér](https://github.com/Puglet) (Moral Support)
   
  
  ## Description
-  - Footprints is a travel site based around a personality quiz. Simply answer the quiz questions and we will tell you where you should travel based on your answers. Our logic adds the scores you recieve for each question and pairs it with one of the destinations in our database. Users also have the ability to "leave their footprint" and add cities or locations they have been to. On the "Discover Footprints" page, users can search our database for a specific footprint or browse recent foorptints. Users also have the ability to update the description of footprint or delete comments associated with a footprint.
+  - Footprints is a travel site based around a personality quiz. Simply answer the quiz questions and we will tell you where you should travel based on your answers. Our logic adds the scores you recieve for each question and pairs it with one of the destinations in our database. Users also have the ability to "leave their footprint" and add cities or locations they have been to. On the "Discover Footprints" page, users can search our database for a specific footprint or browse recent footprints. Users also have the ability to update the description of footprint or delete comments associated with a footprint.
   
   
   ## Technologies Used
