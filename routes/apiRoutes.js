@@ -24,9 +24,6 @@ module.exports = function(app) {
       stay: req.body.stay,
     })
       .then(function(dbUsers){
-      // Empty variables to store results
-  
-  
   // Takes each location score and converts it into a number, then pushes it into one array. 
     db.Locations.findAll({}).then(function(dbLocations) {
     let bestMatch;
@@ -44,7 +41,7 @@ module.exports = function(app) {
     differences.push(Math.abs((dbUsers.climate) - (dbLocations[i].climate)));
     differences.push(Math.abs((dbUsers.access) - (dbLocations[i].access)));
     differences.push(Math.abs((dbUsers.stay) - (dbLocations[i].stay)));
-    console.log("These are the differences; " + differences);
+    // console.log("These are the differences; " + differences);
   // Get the sum of the differences array.
     const result = differences.reduce((acc, curr) => {
       return acc + curr;
@@ -55,15 +52,14 @@ module.exports = function(app) {
         bestMatch = dbLocations[i];
         smallestDifference = result;
       }
-  
   // If a best match exists, compare the current result to the smallest difference, and replace if less.
       else if(result < smallestDifference) {
         bestMatch = dbLocations[i];
         smallestDifference = result;
       }
   };
-  console.log("The smallest difference is :" + smallestDifference);
-  console.log("The best Match Is :" + bestMatch);
+  // console.log("The smallest difference is :" + smallestDifference);
+  // console.log("The best Match Is :" + bestMatch);
   res.json(bestMatch);
   });
       });
