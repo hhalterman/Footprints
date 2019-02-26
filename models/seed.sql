@@ -85,7 +85,7 @@ VALUES ("Prague", "Czech Rebulic", "https://i.imgur.com/9eL14Jn.jpg", "The bohem
 
 
 INSERT INTO locations (CITY, COUNTRY, img, locDesc, nature, cost, history, adventure, culture, urban, activity, climate, access, stay, createdAt, updatedAt)
-VALUES ("Katehmandu", "Nepal", "https://i.imgur.com/fYHp832.jpg", "Nepal’s capital is surrounded by a valley full of historic sites, ancient temples, shrines, and fascinating villages. Mingle with locals and animals amid Durbar Square’s monuments, or join mountain trekkers in the bustling Thamel District.
+VALUES ("Kathmandu", "Nepal", "https://i.imgur.com/fYHp832.jpg", "Nepal’s capital is surrounded by a valley full of historic sites, ancient temples, shrines, and fascinating villages. Mingle with locals and animals amid Durbar Square’s monuments, or join mountain trekkers in the bustling Thamel District.
 ",
 5, 1, 2, 5, 2, 1, 3, 5, 2, 3, "2019-02-23 18:39:07", "2019-02-23 18:39:07");
 
