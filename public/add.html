@@ -169,13 +169,13 @@
       $("#addFootprintBtn").on("click", function (event) {
         event.preventDefault();
         let newFootprint = {
-          Footprint: $("#footprint").val().trim(),
-          City: $("#city").val().trim(),
-          Description: $("#desc").val().trim(),
-          Photo: $("#photo").val().trim()
+          username: $("#username").val().trim(),
+          city: $("#city").val().trim(),
+          description : $("#desc").val().trim(),
+          country: $("#country").val().trim()
         };
 
-        $.post("/api/destinations", newFootprint)
+        $.post("/api/add", newFootprint)
           .then(function (data) {
             console.log("add.html", data);
           });
