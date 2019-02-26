@@ -2,9 +2,10 @@
   "name": "footprints",
   "version": "1.0.0",
   "description": "",
-  "main": "test.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified.\""
+    "test": "echo \"Error: no test specified.\"",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,12 @@
   "dependencies": {
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.1",
+    "express-handlebars": "^3.0.2",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
     "sequelize": "^4.42.0"
+  },
+  "engines": {
+    "node": "10.15.1"
   }
 }
