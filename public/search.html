@@ -98,8 +98,8 @@
         <div class="col-md-12">
           <div id="results">
 
-            <!--These cards will appear from user's search, just testing stylization-->
-            <div class="col-md-4 col-sm-6">
+            <!--These cards will appear from database, just testing stylization-->
+            <!-- <div class="col-md-4 col-sm-6">
               <div class="card footprintCard">
                 <img id="bestMatchPhoto"
                   src="" class="card-img-top">
@@ -112,7 +112,7 @@
                   <hr>
                   <h4>Most Recent Comment</h4>
                   <p class="comment"></p>
-                  <a href="#" class="btn btn-primary card-btn editCommentBtn">Edit this Comment</a>
+                  <a href="#" class="btn btn-primary card-btn editCommentBtn">Edit this Comment</a> -->
 
                   <!-- Modal opens when comment button is clicked-->
                   <div id="makeCommentModal" class="modal fade" tabindex="-1" role="dialog">
@@ -266,23 +266,26 @@ $("#search-btn").on("click", function () {
       var img = $("<img>");
       img.attr("src", data.img);
       img.attr("alt", data.city);
-      img.addClass();
-      $(img).attr('id', 'newID');
+      img.addClass('card-img-top');
+      $(img).attr('id', 'bestMatchPhoto');
 
-      var city = $("<h5>");
-      city.addClass();
+      var city = $("<h4>");
+      city.addClass('card-title');
       city.text(data.city);
+      $(city).attr('id', 'bestMatchCity');
 
-      var country = $("<h5>");
-      country.addClass();
+      var country = $("<h4>");
+      country.addClass('card-title');
       country.text(data.country);
+      $(country).attr('id', 'bestMatchCountry');
 
-      var locDesc = $("<h5>");
-      locDesc.addClass();
+      var locDesc = $("<p>");
+      locDesc.addClass('footprintDescription');
       locDesc.text(data.locDesc);
+      $(locDesc).attr('id', 'bestMatchDesc');
 
       var overlay = $("<div>");
-      overlay.addClass();
+      overlay.addClass('card-block');
       overlay.append(locDesc);
       overlay.append(city);
       overlay.append(country);
@@ -290,8 +293,8 @@ $("#search-btn").on("click", function () {
       var locDiv = $("<div>");
       locDiv.append(img);
       locDiv.append(overlay);
-      locDiv.addClass();
-      $("#loc_container").append(locDiv);
+      locDiv.addClass('card', 'footprintCard');
+      $(".col-md-4", ".col-sm-6").append(locDiv);
 
     }
   });
