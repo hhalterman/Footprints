@@ -515,6 +515,10 @@ nav.vertical-nav {
   width: 570px
 }
 
+.modal-body h2 {
+  display: inline-block;
+}
+
 .modal-body #bestMatchDesc {
   font-size: 24px;
   padding-top: 30px;
@@ -651,6 +655,7 @@ body {
 
 .card-block h4 {
   font-weight: bold;
+  display: inline-block;
 }
 
 .footprintCard {
