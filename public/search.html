@@ -69,6 +69,7 @@
                 </div>
                 <div class="modal-body">
                   <h2 id="searchCity"></h2>
+                  <h2>, </h2>
                   <h2 id="searchCountry"></h2>
                   <img id="searchPhoto" src="">
                   <p id="searchDesc"></p>
@@ -232,7 +233,7 @@ $("#search-btn").on("click", function () {
           $("#searchCity").text(data.city);
           $("#searchCountry").text(data.country);
           $("#searchDesc").text(data.locDesc);
-          $("#searchPhoto").text(data.img);
+          $("#searchPhoto").attr('src', data.img);
         }
         else {
           $("#seachCity").text("No footprints here yet!");
@@ -242,7 +243,8 @@ $("#search-btn").on("click", function () {
     });
   
 
-    $(document).ready(function(){
+    $( document ).ready(function(){
+      console.log("This page is loaded.");
         $("#search-btn").click(function(){
           $("#searchMatch").modal('show');
         });
@@ -256,6 +258,7 @@ $("#search-btn").on("click", function () {
           $("#updateFootprintModal").modal('show');
         });
         loadSearch();
+      console.log("This page is done loading.");
     });
 
   function loadSearch() {
@@ -264,38 +267,39 @@ $("#search-btn").on("click", function () {
     for (var i=0; i < data.length; i++) {
 
       var img = $("<img>");
-      img.attr("src", data.img);
-      img.attr("alt", data.city);
-      img.addClass('card-img-top');
+      $(img).attr("src", data[i].img);
+      $(img).attr("alt", data[i].city);
+      $(img).addClass('card-img-top');
       $(img).attr('id', 'bestMatchPhoto');
 
       var city = $("<h4>");
-      city.addClass('card-title');
-      city.text(data.city);
+      $(city).addClass('card-title');
+      $(city).text(data[i].city);
       $(city).attr('id', 'bestMatchCity');
 
       var country = $("<h4>");
-      country.addClass('card-title');
-      country.text(data.country);
+      $(country).addClass('card-title');
+      $(country).text(data[i].country);
       $(country).attr('id', 'bestMatchCountry');
 
       var locDesc = $("<p>");
-      locDesc.addClass('footprintDescription');
-      locDesc.text(data.locDesc);
+      $(locDesc).addClass('footprintDescription');
+      $(locDesc).text(data[i].locDesc);
       $(locDesc).attr('id', 'bestMatchDesc');
 
       var overlay = $("<div>");
-      overlay.addClass('card-block');
-      overlay.append(locDesc);
-      overlay.append(city);
-      overlay.append(country);
+      $(overlay).addClass('card-block');
+      $(overlay).append(city);
+      $(overlay).append("<h4>, <h4>");
+      $(overlay).append(country);
+      $(overlay).append(locDesc);
 
       var locDiv = $("<div>");
-      locDiv.append(img);
-      locDiv.append(overlay);
-      locDiv.addClass('card', 'footprintCard');
-      $(".col-md-4", ".col-sm-6").append(locDiv);
-
+      $(locDiv).append(img);
+      $(locDiv).append(overlay);
+      $(locDiv).addClass('card footprintCard col-md-4 col-sm-6');
+      $("#results").append(locDiv);
+      console.log("This is loop " + i);
     }
   });
 };
