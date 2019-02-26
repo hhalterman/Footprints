@@ -10,7 +10,8 @@ if (process.env.JAWSDB_URL){
         host: "localhost",
         user: "root",
         password: "#Mew4ever",
-        database: "footprints"
+        database: "footprints",
+        dialect: 'mysql'
     });
 };
 
