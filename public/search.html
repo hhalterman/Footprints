@@ -211,10 +211,10 @@ $("#search-btn").on("click", function () {
         console.log(data);
         if (data) {
           $("#footprint").show();
-          $("#details").text(data.details);
           $("#city").text(data.city);
-          $("#desc").text(data.desc);
-          $("#photo").text(data.photo);
+          $("#country").text(data.country);
+          $("#desc").text(data.locDesc);
+          $("#photo").text(data.img);
         }
         else {
           $("#city").text("No footprints here yet!");
@@ -235,7 +235,47 @@ $("#search-btn").on("click", function () {
         $(".updateBtn").click(function() {
           $("#updateFootprintModal").modal('show');
         });
+        loadSearch();
     });
+
+  function loadSearch() {
+    $.get("/api/search/", function (data) {
+      console.log(data);
+    for (var i=0; i < data.length; i++) {
+
+      var img = $("<img>");
+      img.attr("src", data.img);
+      img.attr("alt", data.city);
+      img.addClass();
+      $(img).attr('id', 'newID');
+
+      var city = $("<h5>");
+      city.addClass();
+      city.text(data.city);
+
+      var country = $("<h5>");
+      country.addClass();
+      country.text(data.country);
+
+      var locDesc = $("<h5>");
+      locDesc.addClass();
+      locDesc.text(data.locDesc);
+
+      var overlay = $("<div>");
+      overlay.addClass();
+      overlay.append(locDesc);
+      overlay.append(city);
+      overlay.append(country);
+
+      var locDiv = $("<div>");
+      locDiv.append(img);
+      locDiv.append(overlay);
+      locDiv.addClass();
+      $("#loc_container").append(locDiv);
+
+    }
+  });
+};
   </script>
 
 
