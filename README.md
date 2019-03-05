@@ -1,7 +1,7 @@
 # Footprints
 
 ## Live Preview
-  - [Footprints](https://herokuapp.com/)
+  - [Footprints](https://infinite-ravine-53376.herokuapp.com//)
 
 
 ## Authors
